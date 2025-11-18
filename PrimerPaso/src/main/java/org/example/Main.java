@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
 
@@ -202,15 +203,38 @@ public class Main {
         // debés obtener en una tercera tus iniciales.
         System.out.println(iniciales);
 
+
+
+
+        // EJERCICIO FUNCIONES
+        //
+        // 1-Hacer una función que reciba como parámetro dos valores y devuelva un boolean.
+        //
+
+
+        // La función debe comprobar si el primer número es divisible por el segundo.
+        //boolean esDivisible(int n, int divisor)
+
+        System.out.println("Ingrese el primer numero");
+        int n = scanner.nextInt();
+
+        System.out.println("Ingrese le divisor");
+        int divisor = scanner.nextInt();
+
+        boolean resultado = esDivisible(n,divisor);
+
+        if(resultado == true){
+            System.out.println("Es divisible");
+        } else {
+            System.out.println("No es divisible");
+        }
+
         scanner.close();
-
-
-
-
-
-
-
-
-
     }
+    static boolean esDivisible (int n, int divisor){
+        return n % divisor == 0;
     }
+}
+
+
+
