@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Date;
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -146,10 +147,62 @@ public class Main {
             System.out.println(p1 + " es mayor que "+ p2);
         }
 
+            // Probando Scanner
+
+            Scanner scanner;
+            scanner = new Scanner(System.in);
+
+                int nume1;
+                int nume2;
+                float coeficiente;
+                String name;
+                char inicio;
+
+                // Ingresamos valor
+
+        System.out.println("Ingrese primer valor");
+        nume1 = scanner.nextInt();
+
+        System.out.println("Ingresa segundo valor");
+        nume2 = scanner.nextInt();
+
+        System.out.println("Ingresa coeficiente");
+        coeficiente = scanner.nextFloat();
+
+        scanner.nextLine(); // Colocamos esto para consumir el salto de linea que queda luego de precionar enter en la entrada del Float
+        //Cuando presionas Enter al introducir un valor en la consola, estás enviando una señal que indica que has terminado de ingresar algo. Esto genera un "salto de línea" o un carácter de nueva línea (\n). Este salto de línea es lo que queda en el búfer después de que introduces un número.
+
+        System.out.println("Ingresa tu nombre");
+        name = scanner.nextLine();
+
+    if (!name.isEmpty()){
+        inicio = name.charAt(0);
+        System.out.println("El primer caracter es " + inicio);
+    } else {
+        System.out.println("No se ingreso nada");
+    }
 
 
 
 
+            // EJERCICIO SCANNER
+
+        // 1 - Ingresá tu nombre
+        String miNombre;
+        System.out.println("Ingresa tu nombre");
+        miNombre = scanner.nextLine();
+        // y tu apellido por separado,
+        String miApellido;
+        System.out.println("Ingresa tu apellido");
+        miApellido = scanner.nextLine();
+        String iniciales;
+
+        iniciales = String.valueOf(miNombre.charAt(0)) + miApellido.charAt(0);
+        // a partir de estas variables
+        // debés obtener en una tercera tus iniciales.
+        System.out.println(iniciales);
+
+        scanner.close();
 
 
 
