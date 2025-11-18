@@ -209,32 +209,59 @@ public class Main {
         // EJERCICIO FUNCIONES
         //
         // 1-Hacer una función que reciba como parámetro dos valores y devuelva un boolean.
-        //
-
-
         // La función debe comprobar si el primer número es divisible por el segundo.
         //boolean esDivisible(int n, int divisor)
 
-        System.out.println("Ingrese el primer numero");
-        int n = scanner.nextInt();
+        int n = obtenerNumero(scanner, "Ingrese el primer valor");
 
-        System.out.println("Ingrese le divisor");
-        int divisor = scanner.nextInt();
+        boolean valido = false;
 
-        boolean resultado = esDivisible(n,divisor);
 
-        if(resultado == true){
-            System.out.println("Es divisible");
-        } else {
-            System.out.println("No es divisible");
+        while (!valido) {
+            int divisor = obtenerNumero(scanner,"Ingrese el divisor");
+                if (divisor == 0) {
+                    System.out.println("El divisor no puede ser 0");
+                } else {
+                    valido = true;
+                    boolean divisible = esDivisible(n, divisor);
+                if (divisible) {
+                    System.out.println(n + " es divisible entre " + divisor);
+                } else {
+                    System.out.println(n + " no es divisible entre " + divisor);
+                }
+            }
         }
-
-        scanner.close();
+ scanner.close();
     }
+
+    // crear una funcion que compruebe si el numero ingresado es valido
+
+    static  int obtenerNumero (Scanner scanner, String mensaje){
+        int numero = 0;
+        boolean valido = false;
+
+
+            while (!valido){
+                System.out.println(mensaje);
+                String entrada = scanner.nextLine();
+                try {
+                    numero = Integer.parseInt(entrada);
+                    valido = true;
+                } catch (NumberFormatException e){
+                    System.out.println("Entrada invalida por favor ingrese un numero");
+                }
+            }
+            return numero;
+
+    }
+
     static boolean esDivisible (int n, int divisor){
         return n % divisor == 0;
     }
 }
+
+
+
 
 
 
